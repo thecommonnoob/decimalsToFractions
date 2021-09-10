@@ -1,5 +1,3 @@
-from fractions import Fraction
-
 number = input("Input a decimal number with the repeating digits in between brackets: ")
 
 
@@ -28,16 +26,21 @@ def do_math(repeating_number, original_number):
     multiplied_by -= 1
 
     # fractions woo
-    top_thingy = multiplied_number
-    bottom_thingy = multiplied_by
+    top_thingy = int(multiplied_number)
+    bottom_thingy = int(multiplied_by)
 
     is_divisible = False
-    is_divisible_by = 2
+    is_divisible_by = 1
 
+    for i in range(min(abs(top_thingy), abs(bottom_thingy)), 1, -1):
+        if top_thingy % i == 0 and bottom_thingy % i == 0:
+            is_divisible_by = i
+            break
 
+    top_thingy /= is_divisible_by
+    bottom_thingy /= is_divisible_by
 
-
-    return (Fraction(int(top_thingy), (bottom_thingy)))
+    return (top_thingy, bottom_thingy)
 
 
 # print(parse_input(number)[1])
