@@ -61,4 +61,4 @@ def simplify_fraction(top_thingy, bottom_thingy):
 # somehow it works
 # idk how it just does
 # for now
-print(do_math(parse_input(number)[0], parse_input(number)[1]), "probably idk an idiot programmed me")
+print(do_math(parse_input(number)[0], parse_input(number)[1]))
